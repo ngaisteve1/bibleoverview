@@ -55,26 +55,41 @@ const events = [
     funFact: "Isaac's name means 'he laughs' because Abraham and Sarah laughed when God promised them a son."
   },
   {
-    title: "The Call of Moses",
-    year: "1446 BC",
+    title: "Jacob Becomes Israel",
+    year: "Genesis 25–35",
     type: "minor",
-    books: ["Exodus"],
-    passages: ["Exodus 3"],
-    description: "God appears to Moses through the burning bush and calls him to deliver Israel from slavery in Egypt.",
-    keyTheme: "God chooses ordinary people and equips them to accomplish His extraordinary purposes.",
-    jesus: "Moses points forward to Jesus as the greater Deliverer and mediator between God and humanity.",
-    funFact: "Moses spent 40 years in Egypt, 40 years in Midian, and 40 years leading Israel through the wilderness."
+    books: ["Genesis"],
+    passages: ["Genesis 32:28", "Genesis 35:10"],
+    description: "God continues His covenant promise through Jacob, whose twelve sons become the foundation of the twelve tribes of Israel.",
+    keyTheme: "God's promises continue through generations despite human weakness and failure.",
+    jesus: "God's covenant line leads to Jesus, the promised descendant who brings blessing to all nations.",
+    funFact: "Jacob's name was changed to Israel, and his twelve sons became the ancestors of the twelve tribes of Israel."
+  },
+  {
+    title: "God Forms Israel as His People",
+    year: "1446 BC",
+    type: "major",
+    books: ["Exodus", "Leviticus", "Deuteronomy"],
+    passages: ["Exodus 19:5-6", "Deuteronomy 7:6"],
+    description: "God forms the descendants of Abraham into a covenant nation, calling Israel to know Him, reflect His character, and bless the nations.",
+    keyTheme: "God chooses Israel to reveal His purposes and serve as His witness among the nations.",
+    jesus: "Jesus fulfills Israel's calling by becoming the faithful Son who brings God's blessing to all peoples.",
+    funFact: "Israel was called a 'kingdom of priests,' showing their purpose was to represent God to the world."
   },
   {
     title: "Exodus",
     year: "1446 BC",
     type: "major",
     books: ["Exodus", "Leviticus", "Numbers", "Deuteronomy"],
-    passages: ["Exodus 12", "Exodus 20"],
-    description: "God rescues Israel from slavery in Egypt, establishes His covenant, and forms them into a nation devoted to Him.",
-    keyTheme: "God redeems His people and establishes a covenant relationship with them.",
+    passages: [
+      "Exodus 3",
+      "Exodus 12",
+      "Exodus 19-20"
+    ],
+    description: "God calls Moses to deliver Israel from slavery in Egypt, rescues His people through the Passover, and establishes His covenant with them at Mount Sinai.",
+    keyTheme: "God redeems His people and forms them into a covenant nation for His purposes.",
     jesus: "The Passover lamb points to Jesus, whose sacrifice brings ultimate freedom from sin.",
-    funFact: "The Exodus became Israel's defining example of God's saving power throughout the Old Testament."
+    funFact: "Moses' life is divided into three 40-year periods: Egypt, Midian, and leading Israel through the wilderness."
   },
   {
     title: "Ten Commandments",
@@ -85,7 +100,7 @@ const events = [
     description: "God gives Israel His law at Mount Sinai, teaching them how to live as His covenant people and reflect His holiness.",
     keyTheme: "God teaches His redeemed people how to live in faithful relationship with Him.",
     jesus: "Jesus fulfills the law perfectly and reveals its true purpose through His teaching and life.",
-    funFact: "The Ten Commandments were given after God rescued Israel, showing obedience flows from relationship with God."
+    funFact: "The first tablets were broken by Moses after Israel worshiped the golden calf. God later gave a second set of tablets that were kept in the Ark of the Covenant."
   },
   {
     title: "Conquest of Canaan",
@@ -132,6 +147,17 @@ const events = [
     funFact: "The first Temple took seven years to build and remained the center of Israel's worship for almost 400 years."
   },
   {
+    title: "The Kingdom Divided",
+    year: "930 BC",
+    type: "major",
+    books: ["1 Kings", "2 Chronicles"],
+    passages: ["1 Kings 12"],
+    description: "After Solomon's reign, Israel divides into the Northern Kingdom and Southern Kingdom because of rebellion and unfaithfulness.",
+    keyTheme: "A divided kingdom reveals the consequences of rejecting God's rule and the need for a faithful King.",
+    jesus: "Jesus comes as the greater Son of David who restores God's kingdom and gathers God's people together.",
+    funFact: "The Northern Kingdom had many kings, but none were described as faithful to God in the same way as David."
+  },
+  {
     title: "Ministry of Elijah/Elisha",
     year: "870–790 BC",
     type: "minor",
@@ -154,7 +180,18 @@ const events = [
     funFact: "Isaiah 53 describes the suffering servant centuries before Jesus' death and is one of the clearest Messianic prophecies."
   },
   {
-    title: "Babylonian Exile & Ezekiel",
+    title: "Ministry of Jeremiah",
+    year: "627–586 BC",
+    type: "minor",
+    books: ["Jeremiah"],
+    passages: ["Jeremiah 31:31-34"],
+    description: "Jeremiah warns Judah of coming judgment while announcing God's promise of a New Covenant.",
+    keyTheme: "God judges rebellion but promises restoration and a renewed relationship with His people.",
+    jesus: "The New Covenant promise finds its fulfilment through Jesus' sacrifice and the forgiveness He brings.",
+    funFact: "Jeremiah is known as the 'weeping prophet' because he grieved over Judah's rejection of God."
+  },
+  {
+    title: "Babylonian Exile",
     year: "586 BC",
     type: "major",
     books: ["Jeremiah", "Lamentations", "Ezekiel", "Daniel"],
@@ -176,6 +213,17 @@ const events = [
     funFact: "Bethlehem was the city of David, connecting Jesus' birth to the royal promise God made to David."
   },
   {
+    title: "Jesus' Ministry",
+    year: "AD 27–30",
+    type: "major",
+    books: ["Matthew", "Mark", "Luke", "John"],
+    passages: ["Mark 1:14-15", "Luke 4:18-19"],
+    description: "Jesus announces the arrival of God's kingdom, teaches truth, performs miracles, and reveals God's character through His life and ministry.",
+    keyTheme: "Jesus reveals God's kingdom and shows that God's saving purpose has arrived through Him.",
+    jesus: "Jesus is the promised Messiah, the Son of God, and the King who brings God's kingdom to humanity.",
+    funFact: "Jesus' ministry lasted about three years, yet it transformed history and continues to impact billions of people."
+  },
+  {
     title: "Cross and Resurrection",
     year: "AD 30",
     type: "major",
@@ -187,7 +235,7 @@ const events = [
     funFact: "The resurrection transformed Jesus' frightened disciples into bold witnesses who spread the gospel throughout the world."
   },
   {
-    title: "Birth of the Church",
+    title: "Pentecost: The Church Begins",
     year: "AD 30–33",
     type: "major",
     books: ["Acts"],
@@ -198,15 +246,48 @@ const events = [
     funFact: "At Pentecost, people from many nations heard the gospel in their own languages, showing God's salvation is for all peoples."
   },
   {
+    title: "The Gospel Spreads to the Nations",
+    year: "AD 30–60",
+    type: "major",
+    books: ["Acts"],
+    passages: ["Acts 1:8", "Acts 13"],
+    description: "The Holy Spirit empowers the early Church to spread the gospel from Jerusalem to Judea, Samaria, and the nations.",
+    keyTheme: "God's salvation plan expands beyond Israel to include people from every nation.",
+    jesus: "The risen Jesus continues His mission through His Church as His witnesses proclaim the gospel.",
+    funFact: "The book of Acts begins in Jerusalem and ends with the gospel reaching Rome, showing the expansion of God's mission."
+  },
+  // {
+  //   title: "The Apostles' Writings",
+  //   year: "AD 50–95",
+  //   type: "major",
+  //   books: [
+  //     "Romans",
+  //     "1 Corinthians",
+  //     "Hebrews",
+  //     "James",
+  //     "1 Peter",
+  //     "Revelation"
+  //   ],
+  //   passages: [
+  //     "Romans 1:16",
+  //     "1 Corinthians 15:1-4",
+  //     "Revelation 21:1-5"
+  //   ],
+  //   description: "The apostles teach the Church the meaning of Jesus' life, death, and resurrection while guiding believers to live faithfully as they await His return.",
+  //   keyTheme: "God's people live between Christ's first coming and His future return, continuing His mission with hope.",
+  //   jesus: "Jesus is the risen Lord who builds His Church and will return to complete God's kingdom.",
+  //   funFact: "The New Testament letters were written to real churches facing real struggles, making their teachings practical for believers today."
+  // },  
+  {
     title: "New Creation",
     year: "Future Promise",
     type: "major",
     books: ["Revelation"],
-    passages: ["Revelation 21:1-5"],
-    description: "God restores creation, removes the effects of sin, and dwells forever with His people in the renewed heavens and earth.",
-    keyTheme: "The Bible ends where it began: God dwelling with humanity in a restored creation.",
-    jesus: "Jesus makes all things new and reigns forever as King over God's eternal kingdom.",
-    funFact: "The Bible begins with a garden in Genesis and ends with a restored creation in Revelation, showing God's complete redemption plan."
+    passages: ["Revelation 21:1-5", "Revelation 22:1-5"],
+    description: "God restores creation, removes the effects of sin, and brings His people into eternal fellowship with Him in the renewed heavens and earth.",
+    keyTheme: "The Bible ends with God's original purpose fulfilled: dwelling with humanity in a restored creation.",
+    jesus: "Jesus makes all things new and reigns forever as the King over God's eternal kingdom.",
+    funFact: "The Bible begins with a garden in Genesis and ends with a restored creation in Revelation, showing God's complete redemption story."
   }
 ];
 
