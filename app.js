@@ -27,10 +27,10 @@ const events = [
     type: "minor",
     books: ["Genesis"],
     passages: ["Genesis 6:13", "Genesis 9:12-13"],
-    description: "God judges the earth with water but preserves Noah and his family.",
-    keyTheme: "God judges wickedness but provides salvation for those who trust Him.",
-    jesus: "The ark serves as a prototype of salvation through Christ.",
-    funFact: "The ark was built according to God's design and was large enough to preserve Noah's family and representatives of animals."
+    description: "God judges the widespread corruption of humanity through the flood while preserving Noah, his family, and representatives of creation.",
+    keyTheme: "God judges evil but provides a way of salvation for those who trust and obey Him.",
+    jesus: "The ark points forward to Christ as the ultimate refuge and means of salvation from judgment.",
+    funFact: "God established the rainbow covenant with Noah as a sign of His promise never again to destroy the earth with a flood."
   },
   {
     title: "Abraham Covenant",
@@ -38,10 +38,10 @@ const events = [
     type: "major",
     books: ["Genesis"],
     passages: ["Genesis 12", "Genesis 15"],
-    description: "God promises Abraham land, descendants and blessing.",
-    keyTheme: "God begins His redemption plan through one family that will bless all nations.",
-    jesus: "Jesus brings blessing to all nations through Abraham's seed.",
-    funFact: "Abraham was 75 years old when God called him, showing that God's purposes are not limited by age."
+    description: "God calls Abraham and promises him land, descendants, and blessing, beginning His plan to bless all nations through one family.",
+    keyTheme: "God begins His redemption plan through Abraham's family and extends His blessing to the entire world.",
+    jesus: "Jesus fulfills God's promise to Abraham by bringing salvation and blessing to all nations.",
+    funFact: "Abraham was 75 years old when God called him, showing that God's purposes are not limited by human age."
   },
   {
     title: "Isaac Born",
@@ -49,10 +49,10 @@ const events = [
     type: "minor",
     books: ["Genesis"],
     passages: ["Genesis 21"],
-    description: "God fulfills His promise by giving Abraham Isaac.",
-    keyTheme: "God faithfully keeps His promises even when they seem impossible.",
-    jesus: "Shows God's faithfulness in fulfilling promises.",
-    funFact: "Isaac's name means 'he laughs' because Abraham and Sarah laughed when God promised them a son in their old age."
+    description: "God fulfills His promise by giving Abraham and Sarah a son, demonstrating His faithfulness despite their old age and impossible circumstances.",
+    keyTheme: "God faithfully keeps His promises even when fulfillment seems impossible from a human perspective.",
+    jesus: "Isaac's miraculous birth points to God's ability to fulfill His promises through His chosen plan.",
+    funFact: "Isaac's name means 'he laughs' because Abraham and Sarah laughed when God promised them a son."
   },
   {
     title: "The Call of Moses",
@@ -60,10 +60,10 @@ const events = [
     type: "minor",
     books: ["Exodus"],
     passages: ["Exodus 3"],
-    description: "God calls Moses through the burning bush to deliver His people.",
-    keyTheme: "God chooses and equips unlikely people to accomplish His mission.",
-    jesus: "Moses prefigures Christ as the great deliverer and mediator.",
-    funFact: "Moses spent 40 years in Egypt, 40 years in Midian, and 40 years leading Israel."
+    description: "God appears to Moses through the burning bush and calls him to deliver Israel from slavery in Egypt.",
+    keyTheme: "God chooses ordinary people and equips them to accomplish His extraordinary purposes.",
+    jesus: "Moses points forward to Jesus as the greater Deliverer and mediator between God and humanity.",
+    funFact: "Moses spent 40 years in Egypt, 40 years in Midian, and 40 years leading Israel through the wilderness."
   },
   {
     title: "Exodus",
@@ -71,10 +71,10 @@ const events = [
     type: "major",
     books: ["Exodus", "Leviticus", "Numbers", "Deuteronomy"],
     passages: ["Exodus 12", "Exodus 20"],
-    description: "God delivers Israel from Egypt and establishes covenant.",
-    keyTheme: "God redeems His people and forms them into a covenant nation.",
-    jesus: "The Passover lamb points to Jesus.",
-    funFact: "The Exodus became the defining example of God's saving power and is remembered throughout the Old Testament."
+    description: "God rescues Israel from slavery in Egypt, establishes His covenant, and forms them into a nation devoted to Him.",
+    keyTheme: "God redeems His people and establishes a covenant relationship with them.",
+    jesus: "The Passover lamb points to Jesus, whose sacrifice brings ultimate freedom from sin.",
+    funFact: "The Exodus became Israel's defining example of God's saving power throughout the Old Testament."
   },
   {
     title: "Ten Commandments",
@@ -82,10 +82,10 @@ const events = [
     type: "minor",
     books: ["Exodus"],
     passages: ["Exodus 20"],
-    description: "God gives Israel His law at Mount Sinai.",
-    keyTheme: "God teaches His redeemed people how to live in relationship with Him.",
-    jesus: "Jesus fulfills the law perfectly.",
-    funFact: "The Ten Commandments were given after God rescued Israel, showing that obedience comes from a relationship with God, not as a way to earn salvation."
+    description: "God gives Israel His law at Mount Sinai, teaching them how to live as His covenant people and reflect His holiness.",
+    keyTheme: "God teaches His redeemed people how to live in faithful relationship with Him.",
+    jesus: "Jesus fulfills the law perfectly and reveals its true purpose through His teaching and life.",
+    funFact: "The Ten Commandments were given after God rescued Israel, showing obedience flows from relationship with God."
   },
   {
     title: "Conquest of Canaan",
@@ -93,10 +93,10 @@ const events = [
     type: "minor",
     books: ["Joshua"],
     passages: ["Joshua 1:1-9"],
-    description: "Israel enters the Promised Land under Joshua's leadership.",
-    keyTheme: "God fulfills His promise by giving His people the land He promised Abraham.",
-    jesus: "Joshua (Yeshua) is a type of Jesus, the captain of our salvation.",
-    funFact: "Joshua's Hebrew name is Yeshua, the same name as Jesus, meaning 'The LORD saves.'"
+    description: "Under Joshua's leadership, Israel enters the Promised Land as God fulfills His covenant promise to Abraham.",
+    keyTheme: "God faithfully fulfills His promises and leads His people into the inheritance He prepared for them.",
+    jesus: "Joshua's name means Yeshua, pointing forward to Jesus who brings ultimate salvation.",
+    funFact: "Joshua and Jesus share the same Hebrew name, Yeshua, meaning 'The LORD saves.'"
   },
   {
     title: "Era of Judges",
@@ -104,10 +104,10 @@ const events = [
     type: "minor",
     books: ["Judges", "Ruth"],
     passages: ["Judges 2:16"],
-    description: "God raises up deliverers for Israel during cycles of disobedience.",
-    keyTheme: "Human leaders fail, showing the need for a perfect and eternal King.",
-    jesus: "Jesus is the ultimate Judge and Redeemer.",
-    funFact: "The book of Judges follows a repeated cycle: Israel sins, suffers, cries out, and God raises a deliverer."
+    description: "Israel repeatedly turns away from God, but He raises judges to rescue them from oppression and restore them.",
+    keyTheme: "Human leaders fail, revealing humanity's need for a perfect and eternal King.",
+    jesus: "Jesus is the ultimate Judge and Redeemer who delivers His people forever.",
+    funFact: "Judges follows a repeating cycle: sin, oppression, crying out to God, and deliverance through a judge."
   },
   {
     title: "Davidic Covenant",
@@ -115,10 +115,10 @@ const events = [
     type: "major",
     books: ["1 Samuel", "2 Samuel", "Psalms"],
     passages: ["2 Samuel 7"],
-    description: "God promises David an everlasting kingdom.",
-    keyTheme: "God promises an eternal King from David's family who will rule forever.",
-    jesus: "Jesus is the eternal Son of David.",
-    funFact: "David wanted to build God a house (the Temple), but God promised to build David a lasting 'house' (dynasty)."
+    description: "God promises David that his family line will continue forever and that an everlasting kingdom will come through his descendant.",
+    keyTheme: "God promises an eternal King from David's family who will rule with everlasting authority.",
+    jesus: "Jesus is the promised Son of David who establishes God's eternal kingdom.",
+    funFact: "David wanted to build God a house, but God promised to build David a lasting dynasty instead."
   },
   {
     title: "Solomon's Temple",
@@ -126,10 +126,10 @@ const events = [
     type: "minor",
     books: ["1 Kings", "2 Chronicles"],
     passages: ["1 Kings 6"],
-    description: "The permanent dwelling place for God's presence is built in Jerusalem.",
-    keyTheme: "God desires to dwell among His people, but the Temple points forward to a greater way God will be present with humanity.",
-    jesus: "Jesus is the true Temple, where God dwells with man.",
-    funFact: "The first Temple took about seven years to build and became the center of Israel's worship for nearly 400 years before its destruction by Babylon."
+    description: "Solomon builds the first permanent Temple in Jerusalem, creating a central place where Israel worships God and experiences His covenant presence among His people.",
+    keyTheme: "God desires to dwell among His people, pointing toward His ultimate presence through Christ.",
+    jesus: "Jesus is the greater Temple where God's presence is fully revealed and where humanity meets God.",
+    funFact: "The first Temple took seven years to build and remained the center of Israel's worship for almost 400 years."
   },
   {
     title: "Ministry of Elijah/Elisha",
@@ -137,10 +137,10 @@ const events = [
     type: "minor",
     books: ["1 Kings", "2 Kings"],
     passages: ["1 Kings 17", "2 Kings 2"],
-    description: "Prophets call a backslidden Israel to repentance.",
+    description: "Elijah and Elisha serve as prophets during a time of spiritual decline, calling Israel back to worship the true God and trust His word.",
     keyTheme: "God remains faithful by sending prophets to call His people back to covenant faithfulness.",
-    jesus: "They prefigure the prophetic and miraculous ministry of Jesus.",
-    funFact: "Elijah is one of the few biblical figures who did not experience ordinary death; he was taken up to heaven in a whirlwind."
+    jesus: "Their prophetic ministries point forward to Jesus, the ultimate prophet who reveals God's truth.",
+    funFact: "Elijah was taken to heaven in a whirlwind without experiencing ordinary death, one of Scripture's most unusual events."
   },
   {
     title: "Ministry of Isaiah",
@@ -148,10 +148,10 @@ const events = [
     type: "minor",
     books: ["Isaiah"],
     passages: ["Isaiah 7:14", "Isaiah 53"],
-    description: "God uses Isaiah to prophesy judgment and the coming Suffering Servant.",
-    keyTheme: "God reveals both judgment for sin and hope through the coming Messiah.",
-    jesus: "Isaiah provides the clearest Old Testament prophecies of Christ.",
-    funFact: "Isaiah 53 describes the suffering servant hundreds of years before Jesus' crucifixion and is one of the strongest Messianic prophecies in the Old Testament."
+    description: "Isaiah proclaims God's judgment against sin while revealing hope through prophecies about the coming Messiah and suffering servant.",
+    keyTheme: "God reveals both judgment and salvation through the promised coming Messiah.",
+    jesus: "Isaiah's prophecies point clearly to Jesus as the suffering servant and promised Savior.",
+    funFact: "Isaiah 53 describes the suffering servant centuries before Jesus' death and is one of the clearest Messianic prophecies."
   },
   {
     title: "Babylonian Exile & Ezekiel",
@@ -159,10 +159,10 @@ const events = [
     type: "major",
     books: ["Jeremiah", "Lamentations", "Ezekiel", "Daniel"],
     passages: ["Jeremiah 31:31", "Ezekiel 36:26"],
-    description: "Judah is taken into exile; Ezekiel prophesies in Babylon of a new heart and Spirit.",
+    description: "Babylon destroys Jerusalem and takes Judah into exile, while prophets like Ezekiel bring messages of judgment, restoration, and future hope.",
     keyTheme: "God disciplines His people but promises restoration through a New Covenant and transformed hearts.",
-    jesus: "The New Covenant prophecy points to Christ's work in the believer.",
-    funFact: "Ezekiel received visions while living in Babylon, showing that God's presence was not limited to Jerusalem or the Temple."
+    jesus: "The New Covenant promises find fulfillment through Jesus, who brings forgiveness and a renewed relationship with God.",
+    funFact: "Ezekiel received visions while living in Babylon, showing God's presence was not limited to the Temple in Jerusalem."
   },
   {
     title: "Birth of Jesus",
@@ -170,10 +170,10 @@ const events = [
     type: "major",
     books: ["Matthew", "Luke"],
     passages: ["Matthew 1", "Luke 2"],
-    description: "The Messiah enters the world.",
-    keyTheme: "God's promise of salvation reaches its fulfillment as the Creator enters His creation.",
-    jesus: "God becomes flesh.",
-    funFact: "Jesus' birthplace, Bethlehem, was also the hometown of King David, connecting Jesus to the promised Davidic royal line."
+    description: "Jesus, the promised Messiah and Son of God, is born in Bethlehem, bringing God's salvation plan into human history through the incarnation.",
+    keyTheme: "God fulfills His promises by entering His creation and becoming present with humanity.",
+    jesus: "Jesus is the promised Messiah, God in the flesh, who comes to save His people from sin.",
+    funFact: "Bethlehem was the city of David, connecting Jesus' birth to the royal promise God made to David."
   },
   {
     title: "Cross and Resurrection",
@@ -181,10 +181,32 @@ const events = [
     type: "major",
     books: ["Matthew", "Mark", "Luke", "John"],
     passages: ["Isaiah 53", "Luke 24"],
-    description: "Jesus dies and rises again.",
-    keyTheme: "Jesus accomplishes God's plan of salvation by defeating sin and death.",
-    jesus: "The center of God's salvation plan.",
-    funFact: "The resurrection transformed Jesus' disciples from fearful followers into bold witnesses who proclaimed His message throughout the world."
+    description: "Jesus dies on the cross for sin and rises from the dead, accomplishing God's plan of redemption and defeating the power of death.",
+    keyTheme: "Jesus completes God's salvation plan by defeating sin, death, and separation from God.",
+    jesus: "The death and resurrection of Jesus are the center of the gospel and the foundation of Christian faith.",
+    funFact: "The resurrection transformed Jesus' frightened disciples into bold witnesses who spread the gospel throughout the world."
+  },
+  {
+    title: "Birth of the Church",
+    year: "AD 30–33",
+    type: "major",
+    books: ["Acts"],
+    passages: ["Acts 2"],
+    description: "The Holy Spirit comes at Pentecost, empowering Jesus' followers to proclaim the gospel and forming the early Church.",
+    keyTheme: "God's presence now dwells within His people through the Holy Spirit, continuing His mission in the world.",
+    jesus: "The risen Christ continues His work through His Church as His followers become witnesses of the gospel.",
+    funFact: "At Pentecost, people from many nations heard the gospel in their own languages, showing God's salvation is for all peoples."
+  },
+  {
+    title: "New Creation",
+    year: "Future Promise",
+    type: "major",
+    books: ["Revelation"],
+    passages: ["Revelation 21:1-5"],
+    description: "God restores creation, removes the effects of sin, and dwells forever with His people in the renewed heavens and earth.",
+    keyTheme: "The Bible ends where it began: God dwelling with humanity in a restored creation.",
+    jesus: "Jesus makes all things new and reigns forever as King over God's eternal kingdom.",
+    funFact: "The Bible begins with a garden in Genesis and ends with a restored creation in Revelation, showing God's complete redemption plan."
   }
 ];
 
@@ -272,8 +294,11 @@ function generateDetailHtml(e) {
 
     <h3><i class="fa-solid fa-bullseye"></i> Key Theme</h3>
     <p>${e.keyTheme}</p>
-
-    <h3><i class="fa-solid fa-cross"></i> Connection To Jesus</h3>
+    
+    <h3>
+    <i class="fa-solid fa-cross jesus-icon"></i>
+    Connection To Jesus
+    </h3>
     <p>${e.jesus}</p>
 
     ${typeof easterEggUnlocked !== 'undefined' && easterEggUnlocked === true && e.funFact ? `

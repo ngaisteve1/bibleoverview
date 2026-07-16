@@ -103,6 +103,10 @@ DESKTOP GRID LAYOUT (PERFECTLY CENTERED)
 /* =================
 DESKTOP DETAIL CARD PANELS
 ================= */
+.jesus-icon {
+  color: #c62828 !important;
+}
+
 .detail {
   background: white;
   border-radius: 16px;
