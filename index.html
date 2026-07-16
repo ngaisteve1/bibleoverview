@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bible Timeline</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Bible Story Timeline</h1>
+    <p>From Creation to New Creation</p>
+    <div class="filters">
+      <button onclick="filterEvents('all')">All</button>
+      <button onclick="filterEvents('major')">Major Events</button>
+      <!-- <button onclick="filterEvents('minor')">Minor Events</button> -->
+    </div>
+  </header>
+
+  <div class="page">
+    <div id="leftDetail" class="detail left-detail"></div>
+
+    <div id="timeline" class="timeline"></div>
+
+    <div id="rightDetail" class="detail right-detail"></div>
+  </div>
+
+  <div id="mobileModal" class="modal-overlay" onclick="closeMobileModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeMobileModal(event)">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
