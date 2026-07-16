@@ -267,7 +267,7 @@ function generateDetailHtml(e) {
     <h3><i class="fa-solid fa-location-dot"></i> Key Passages</h3>
     <div class="inline-list">${formatInlineList(e.passages)}</div>
 
-    <h3><i class="fa-solid fa-book-open"></i> Overview</h3>
+    <h3><i class="fa-solid fa-book-open"></i> Event Summary</h3>
     <p>${e.description}</p>
 
     <h3><i class="fa-solid fa-bullseye"></i> Key Theme</h3>
