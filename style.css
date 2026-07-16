@@ -1,3 +1,47 @@
+/* =================
+EASTER EGG BUTTON
+================= */
+.easter-egg-btn {
+  background: transparent;
+  border: none;
+  color: #ebdcc5;
+  /* Blends closely into the warm background */
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 15px;
+  padding: 5px;
+  transition: all 0.3s ease;
+  opacity: 0.4;
+}
+
+.easter-egg-btn:hover {
+  opacity: 1;
+  color: #b08b57;
+  transform: scale(1.2) rotate(15deg);
+}
+
+/* State when the user clicks and unlocks it */
+.easter-egg-btn.unlocked {
+  opacity: 1;
+  color: #D4AF37;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+  animation: pulseGold 2s infinite;
+}
+
+@keyframes pulseGold {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;

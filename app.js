@@ -189,6 +189,7 @@ const events = [
 ];
 
 let currentFilter = "major";
+let easterEggUnlocked = false;
 let activeLeftIndex = null;
 let activeRightIndex = null;
 
@@ -202,6 +203,27 @@ function formatInlineList(arr) {
   return `${arr.slice(0, -1).join(", ")}, and ${arr[arr.length - 1]}`;
 }
 
+// Global reveal mechanism toggled by header icon interaction
+function revealEasterEgg() {
+  if (easterEggUnlocked) return; // Prevent loop adjustments if already activated
+
+  easterEggUnlocked = true;
+
+  const btn = document.getElementById("easterEggBtn");
+  btn.classList.add("unlocked");
+  btn.setAttribute("title", "Easter Egg Unlocked! Fun Facts Activated!");
+
+  alert("✨ Secrets Unlocked! You've found the timeline Easter egg. Fun Facts will now appear inside event details!");
+
+  // Dynamic re-render inside existing panels if one happens to be actively open
+  if (activeLeftIndex !== null) {
+    document.getElementById("leftDetail").innerHTML = generateDetailHtml(events[activeLeftIndex]);
+  }
+  if (activeRightIndex !== null) {
+    document.getElementById("rightDetail").innerHTML = generateDetailHtml(events[activeRightIndex]);
+  }
+}
+
 function render() {
   timeline.innerHTML = "";
   const filteredEvents = events.filter(e => currentFilter === "all" || e.type === currentFilter);
@@ -209,14 +231,14 @@ function render() {
   filteredEvents.forEach((e, displayIndex) => {
     const side = displayIndex % 2 === 0 ? "left" : "right";
     const actualIndex = events.findIndex(ev => ev.title === e.title && ev.year === e.year);
-    
+
     const isMajor = e.type === "major";
     const labelIcon = isMajor ? `<i class="fa-solid fa-crown"></i>` : `<i class="fa-regular fa-star"></i>`;
     const titlePrefix = isMajor ? `★ ` : ``;
-    
-    const isActive = (side === "left" && activeLeftIndex === actualIndex) || 
-                     (side === "right" && activeRightIndex === actualIndex);
-    
+
+    const isActive = (side === "left" && activeLeftIndex === actualIndex) ||
+      (side === "right" && activeRightIndex === actualIndex);
+
     const eventElement = document.createElement("div");
     eventElement.className = `event ${side} ${e.type} ${isActive ? 'active' : ''}`;
     eventElement.setAttribute("data-index", actualIndex);
@@ -229,7 +251,7 @@ function render() {
       </div>
       <div class="dot" onclick="handleEventClick(${actualIndex}, '${side}', this.parentElement.querySelector('.card'))"></div>
     `;
-    
+
     timeline.appendChild(eventElement);
   });
 }
@@ -254,8 +276,10 @@ function generateDetailHtml(e) {
     <h3><i class="fa-solid fa-cross"></i> Connection To Jesus</h3>
     <p>${e.jesus}</p>
 
+    ${typeof easterEggUnlocked !== 'undefined' && easterEggUnlocked === true && e.funFact ? `
     <h3><i class="fa-solid fa-star"></i> Fun Fact</h3>
     <p>${e.funFact}</p>
+    ` : ''}
   `;
 }
 
@@ -317,7 +341,7 @@ function smoothScrollToEvent(eventElement) {
   // Calculates container offset position and matches it to desktop sticky coordinates (40px)
   const elementRect = eventElement.getBoundingClientRect();
   const absoluteElementTop = elementRect.top + window.scrollY;
-  
+
   window.scrollTo({
     top: absoluteElementTop - 40,
     behavior: "smooth"
@@ -330,7 +354,7 @@ MOBILE MODAL LOGIC
 function openMobileModal(index) {
   const modal = document.getElementById("mobileModal");
   const modalBody = document.getElementById("modalBody");
-  
+
   modalBody.innerHTML = generateDetailHtml(events[index]);
   modal.classList.add("show");
   document.body.style.overflow = "hidden"; // Lock page background body scrolling
@@ -349,10 +373,10 @@ function filterEvents(type) {
   currentFilter = type;
   activeLeftIndex = null;
   activeRightIndex = null;
-  
+
   document.getElementById("leftDetail").classList.remove("show");
   document.getElementById("rightDetail").classList.remove("show");
-  
+
   render();
 }
 
