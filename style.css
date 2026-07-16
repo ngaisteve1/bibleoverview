@@ -34,7 +34,7 @@ header p {
   margin: 5px;
   font-weight: 600;
   transition: all 0.25s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .filters button:hover {
@@ -66,11 +66,12 @@ DESKTOP DETAIL CARD PANELS
   box-shadow: 0 12px 30px rgba(90, 70, 50, 0.12);
   border: 1px solid rgba(210, 184, 148, 0.2);
   position: sticky;
-  top: 40px; 
+  top: 40px;
   height: max-content;
   max-height: calc(100vh - 80px);
-  overflow: hidden; /* Prevent both vertical and horizontal scrollbars */
-  
+  overflow: hidden;
+  /* Prevent both vertical and horizontal scrollbars */
+
   /* Prevent layout shift */
   visibility: hidden;
   opacity: 0;
@@ -111,12 +112,70 @@ DESKTOP DETAIL CARD PANELS
   filter: drop-shadow(-4px 2px 2px rgba(90, 70, 50, 0.04));
 }
 
-/* Space-Saving Content Formats */
-.detail h2, .modal-content h2 { color: #5a4632; font-size: 24px; margin-top: 0; margin-bottom: 4px; }
-.detail .year, .modal-content .year { display: inline-block; font-size: 13px; color: #b08b57; background: #fbf7f0; padding: 3px 10px; border-radius: 10px; margin-bottom: 12px; border: 1px solid #ebdcc5; font-weight: 600; }
-.detail h3, .modal-content h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: #8c765c; margin-top: 14px; margin-bottom: 4px; padding-bottom: 2px; }
-.detail p, .modal-content p, .detail .inline-list, .modal-content .inline-list { font-size: 14px; line-height: 1.5; color: #4a3e31; margin: 0; }
-.detail h3 i, .modal-content h3 i { margin-right: 6px; color: #b08b57; }
+/* Space-Saving Content Formats & Readability Polishes */
+.detail h2,
+.modal-content h2 {
+  color: #5a4632;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.detail .year,
+.modal-content .year {
+  display: inline-block;
+  font-size: 13px;
+  color: #b08b57;
+  background: #fbf7f0;
+  padding: 3px 10px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ebdcc5;
+  font-weight: 600;
+}
+
+/* UPDATED: Structured spacing and grid adjustments for text alignment */
+.detail h3,
+.modal-content h3 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #8c765c;
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* UPDATED: Subtle border dividers that do not render on the first section element */
+.detail h3:not(:first-of-type),
+.modal-content h3:not(:first-of-type) {
+  border-top: 1px solid rgba(210, 184, 148, 0.25);
+  padding-top: 16px;
+  margin-top: 22px;
+}
+
+/* UPDATED: Muted text adjustments to establish clearer line contrast boundaries */
+.detail p,
+.modal-content p,
+.detail .inline-list,
+.modal-content .inline-list {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #574c3f;
+  margin: 0;
+}
+
+/* UPDATED: Mutes icons slightly so they support readability instead of competing for color attention */
+.detail h3 i,
+.modal-content h3 i {
+  margin-right: 6px;
+  color: #b08b57;
+  opacity: 0.85;
+  font-size: 14px;
+}
 
 /* =================
 TIMELINE TRACK
@@ -146,8 +205,15 @@ TIMELINE TRACK
   box-sizing: border-box;
 }
 
-.event.left { left: 0; text-align: right; }
-.event.right { left: 50%; text-align: left; }
+.event.left {
+  left: 0;
+  text-align: right;
+}
+
+.event.right {
+  left: 50%;
+  text-align: left;
+}
 
 /* =================
 CONNECTOR LINES
@@ -161,13 +227,33 @@ CONNECTOR LINES
   z-index: 1;
   transition: background 0.3s ease;
 }
-.event.minor::before { background: #cbd5e1; }
-.event.major::before { background: #e2c77d; height: 5px; }
 
-.event.left::before { right: 0; width: 30px; }
-.event.right::before { left: 0; width: 30px; }
-.event.left.active::before { background: #D4AF37; }
-.event.right.active::before { background: #D4AF37; }
+.event.minor::before {
+  background: #cbd5e1;
+}
+
+.event.major::before {
+  background: #e2c77d;
+  height: 5px;
+}
+
+.event.left::before {
+  right: 0;
+  width: 30px;
+}
+
+.event.right::before {
+  left: 0;
+  width: 30px;
+}
+
+.event.left.active::before {
+  background: #D4AF37;
+}
+
+.event.right.active::before {
+  background: #D4AF37;
+}
 
 /* =================
 EVENT CARDS HIERARCHY
@@ -181,8 +267,18 @@ EVENT CARDS HIERARCHY
   transition: transform .25s, box-shadow .25s, border-color .25s;
 }
 
-.card h2 { margin: 0; font-size: 1.2rem; font-weight: 700; line-height: 1.2; }
-.card .year { font-size: 13px; margin-top: 6px; font-weight: 600; }
+.card h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.card .year {
+  font-size: 13px;
+  margin-top: 6px;
+  font-weight: 600;
+}
 
 .label {
   display: inline-flex;
@@ -200,10 +296,23 @@ EVENT CARDS HIERARCHY
   border-left: 6px solid #D4AF37;
   box-shadow: 0 4px 12px rgba(212, 175, 55, 0.06);
 }
-.major .card h2 { color: #685216; }
-.major .card .year { color: #b79528; }
-.major-label { color: #b79528; }
-.major .card:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 14px 28px rgba(212, 175, 55, 0.16); }
+
+.major .card h2 {
+  color: #685216;
+}
+
+.major .card .year {
+  color: #b79528;
+}
+
+.major-label {
+  color: #b79528;
+}
+
+.major .card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(212, 175, 55, 0.16);
+}
 
 /* Minor (Blue/Grey Theme) */
 .minor .card {
@@ -212,10 +321,23 @@ EVENT CARDS HIERARCHY
   border-left: 4px solid #5B7DBD;
   box-shadow: 0 4px 12px rgba(90, 70, 50, 0.03);
 }
-.minor .card h2 { color: #334155; }
-.minor .card .year { color: #64748b; }
-.minor-label { color: #5B7DBD; }
-.minor .card:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 14px 28px rgba(90, 70, 50, 0.1); }
+
+.minor .card h2 {
+  color: #334155;
+}
+
+.minor .card .year {
+  color: #64748b;
+}
+
+.minor-label {
+  color: #5B7DBD;
+}
+
+.minor .card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(90, 70, 50, 0.1);
+}
 
 /* =================
 TIMELINE DOTS
@@ -229,27 +351,72 @@ TIMELINE DOTS
   transition: transform 0.25s, box-shadow 0.25s;
 }
 
-.event.left .dot { right: 0; transform: translate(50%, -50%); }
-.event.right .dot { left: 0; transform: translate(-50%, -50%); }
+.event.left .dot {
+  right: 0;
+  transform: translate(50%, -50%);
+}
 
-.major .dot { width: 22px; height: 22px; background: #D4AF37; border: 4px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.15); }
-.minor .dot { width: 14px; height: 14px; background: #5B7DBD; border: 3px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.event.right .dot {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.major .dot {
+  width: 22px;
+  height: 22px;
+  background: #D4AF37;
+  border: 4px solid white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.minor .dot {
+  width: 14px;
+  height: 14px;
+  background: #5B7DBD;
+  border: 3px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 /* Active Selection States */
-.event.active.major .card { border: 2px solid #D4AF37; border-left: 6px solid #D4AF37; box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2); }
-.event.active.minor .card { border: 2px solid #5B7DBD; border-left: 4px solid #5B7DBD; box-shadow: 0 0 0 4px rgba(91, 125, 189, 0.2); }
-.event.active.major .dot { box-shadow: 0 0 0 8px rgba(212, 175, 55, 0.25); transform: translate(calc(var(--dir, 1) * 50%), -50%) scale(1.2); }
-.event.active.minor .dot { box-shadow: 0 0 0 6px rgba(91, 125, 189, 0.25); transform: translate(calc(var(--dir, 1) * 50%), -50%) scale(1.25); }
-.event.left { --dir: 1; }
-.event.right { --dir: -1; }
+.event.active.major .card {
+  border: 2px solid #D4AF37;
+  border-left: 6px solid #D4AF37;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+}
+
+.event.active.minor .card {
+  border: 2px solid #5B7DBD;
+  border-left: 4px solid #5B7DBD;
+  box-shadow: 0 0 0 4px rgba(91, 125, 189, 0.2);
+}
+
+.event.active.major .dot {
+  box-shadow: 0 0 0 8px rgba(212, 175, 55, 0.25);
+  transform: translate(calc(var(--dir, 1) * 50%), -50%) scale(1.2);
+}
+
+.event.active.minor .dot {
+  box-shadow: 0 0 0 6px rgba(91, 125, 189, 0.25);
+  transform: translate(calc(var(--dir, 1) * 50%), -50%) scale(1.25);
+}
+
+.event.left {
+  --dir: 1;
+}
+
+.event.right {
+  --dir: -1;
+}
 
 /* =================
 MOBILE RESPONSIVE MODAL OVERLAY
 ================= */
 .modal-overlay {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(62, 50, 37, 0.6);
   backdrop-filter: blur(4px);
   z-index: 100;
@@ -275,7 +442,7 @@ MOBILE RESPONSIVE MODAL OVERLAY
   border-radius: 20px;
   padding: 30px 24px 24px;
   position: relative;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   transform: translateY(20px);
   transition: transform 0.3s ease;
   max-height: 90vh;
@@ -312,13 +479,14 @@ MOBILE RESPONSIVE MODAL OVERLAY
 RESPONSIVE DESIGN SYSTEM MEDIA QUERY
 ================= */
 @media (max-width: 992px) {
+
   /* Collapse to a single-column layout on smaller viewports */
   .page {
     grid-template-columns: 1fr;
     gap: 0;
     max-width: 650px;
   }
-  
+
   /* Hide standard desktop detail panels entirely */
   .detail {
     display: none !important;
@@ -331,7 +499,8 @@ RESPONSIVE DESIGN SYSTEM MEDIA QUERY
   }
 
   /* Overwrite alternating positions into a single down-track flow */
-  .event.left, .event.right {
+  .event.left,
+  .event.right {
     width: 100%;
     left: 0;
     padding-left: 50px;
@@ -347,13 +516,15 @@ RESPONSIVE DESIGN SYSTEM MEDIA QUERY
   }
 
   /* Re-route individual event dots cleanly over the left track guide */
-  .event.left .dot, .event.right .dot {
+  .event.left .dot,
+  .event.right .dot {
     left: 20px !important;
     right: auto !important;
     transform: translate(-50%, -50%) !important;
   }
-  
-  .event.active.major .dot, .event.active.minor .dot {
+
+  .event.active.major .dot,
+  .event.active.minor .dot {
     transform: translate(-50%, -50%) scale(1.2) !important;
   }
 }
