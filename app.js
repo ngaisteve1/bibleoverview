@@ -5,10 +5,10 @@ const events = [
     type: "major",
     books: ["Genesis"],
     passages: ["Genesis 1:1", "Genesis 1:26-27"],
-    description: "God creates the universe and humanity in His image.",
+    description: "God creates the heavens, earth, and humanity, establishing His design for creation and giving humans the unique role of bearing His image and reflecting His glory.",
     keyTheme: "God is the Creator, and humanity is created to reflect His image and represent Him on earth.",
-    jesus: "Jesus is the Word through whom all things were created.",
-    funFact: "The first recorded words of God in Scripture are 'Let there be light.' Creation begins through God's spoken word."
+    jesus: "Jesus is the eternal Word through whom all things were created, showing that Christ was active from the beginning of creation.",
+    funFact: "The first recorded words of God in Scripture are 'Let there be light,' showing the power of God's spoken word."
   },
   {
     title: "The Fall",
@@ -16,10 +16,10 @@ const events = [
     type: "major",
     books: ["Genesis"],
     passages: ["Genesis 3:15"],
-    description: "Sin enters the world through human rebellion.",
-    keyTheme: "Humanity's greatest problem is sin, but God immediately promises a future victory over evil.",
-    jesus: "The promised seed points forward to Christ's victory over sin.",
-    funFact: "Genesis 3:15 is often called the 'first gospel promise' because it is the earliest hint of God's plan to defeat sin and Satan."
+    description: "Adam and Eve disobey God in the Garden of Eden, bringing sin, suffering, and separation from God into the world.",
+    keyTheme: "Humanity's greatest problem is sin, but God immediately reveals His plan to bring redemption.",
+    jesus: "The promised offspring of Eve points forward to Jesus, who defeats sin and Satan through His saving work.",
+    funFact: "Genesis 3:15 is called the first gospel promise because it is the earliest announcement of God's victory over evil."
   },
   {
     title: "The Flood",
