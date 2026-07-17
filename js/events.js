@@ -133,7 +133,19 @@ const events = [
         description: "Israel repeatedly turns away from God, but He raises judges to rescue them from oppression and restore them.",
         keyTheme: "Human leaders fail, revealing humanity's need for a perfect and eternal King.",
         jesus: "Jesus is the ultimate Judge and Redeemer who delivers His people forever.",
-        funFact: "Judges follows a repeating cycle: sin, oppression, crying out to God, and deliverance through a judge."
+        funFact: ""
+    },
+    {
+        title: "The United Kingdom",
+        year: "1050–930 BC",
+        type: "major",
+        testament: "ot",
+        books: ["1 Samuel", "2 Samuel", "1 Kings"],
+        passages: ["1 Samuel 8", "1 Samuel 12"],
+        description: "Israel transitions from a loose confederation of tribes under judges to a centralized monarchy under Saul, David, and Solomon, establishing Jerusalem as the political and spiritual capital.",
+        keyTheme: "God is the true King, but He allows an earthly monarchy to point toward the need for the ultimate, perfect King who will reign forever.",
+        jesus: "Jesus is the True King of kings who establishes an eternal, spiritual kingdom that will never be divided or destroyed.",
+        funFact: "The people demanded a king to be like the surrounding nations, but God warned them that an earthly king would bring both benefits and heavy burdens."
     },
     {
         title: "Davidic Covenant",
@@ -158,6 +170,18 @@ const events = [
         keyTheme: "God desires to dwell among His people, pointing toward His ultimate presence through Christ.",
         jesus: "Jesus is the greater Temple where God's presence is fully revealed and where humanity meets God.",
         funFact: "The first Temple took seven years to build and remained the center of Israel's worship for almost 400 years."
+    },
+    {
+        title: "The United Kingdom",
+        year: "1050–930 BC",
+        type: "major",
+        testament: "ot",
+        books: ["1 Samuel", "2 Samuel", "1 Kings"],
+        passages: ["1 Samuel 8", "1 Samuel 12"],
+        description: "Israel transitions from a loose confederation of tribes under judges to a centralized monarchy under Saul, David, and Solomon, establishing Jerusalem as the political and spiritual capital.",
+        keyTheme: "God is the true King, but He allows an earthly monarchy to point toward the need for the ultimate, perfect King who will reign forever.",
+        jesus: "Jesus is the True King of kings who establishes an eternal, spiritual kingdom that will never be divided or destroyed.",
+        funFact: "The people demanded a king to be like the surrounding nations, but God warned them that an earthly king would bring both benefits and heavy burdens."
     },
     {
         title: "The Kingdom Divided",

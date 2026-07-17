@@ -6,21 +6,57 @@ function revealEasterEgg() {
 
   easterEggUnlocked = true;
 
+  // 1. Update Button UI
   const btn = document.getElementById("easterEggBtn");
   if (btn) {
     btn.classList.add("unlocked");
-    btn.setAttribute("title", "Easter Egg Unlocked! Interesting Fact Activated!");
+    btn.setAttribute("title", "Insights activated");
   }
 
-  alert("✨ Secrets Unlocked! You've found the timeline Easter egg. Interesting Facts will now appear inside event details!");
+  // 2. Modularized UI Update Helper
+  const updatePanel = (elementId, eventIndex) => {
+    const el = document.getElementById(elementId);
+    if (el && eventIndex !== null) {
+      el.innerHTML = generateDetailHtml(events[eventIndex]);
+    }
+  };
 
-  // Dynamic re-render if panels are actively open during activation
-  if (activeLeftIndex !== null) {
-    document.getElementById("leftDetail").innerHTML = generateDetailHtml(events[activeLeftIndex]);
-  }
-  if (activeRightIndex !== null) {
-    document.getElementById("rightDetail").innerHTML = generateDetailHtml(events[activeRightIndex]);
-  }
+  // Update active panels
+  updatePanel("leftDetail", activeLeftIndex);
+  updatePanel("rightDetail", activeRightIndex);
+
+  // 3. Non-blocking Notification
+  showToast("✨ Secrets Unlocked! You've found the timeline Easter egg. Interesting Facts will now appear inside event details!");
+}
+
+/**
+ * Creates and displays a non-blocking toast notification
+ */
+function showToast(message) {
+  const toast = document.createElement("div");
+  toast.textContent = message;
+
+  // Style the toast directly or via a class
+  Object.assign(toast.style, {
+    position: 'fixed',
+    bottom: '20px',
+    right: '20px',
+    backgroundColor: '#333',
+    color: '#fff',
+    padding: '12px 20px',
+    borderRadius: '4px',
+    zIndex: '1000',
+    transition: 'opacity 0.5s',
+    fontFamily: 'sans-serif'
+  });
+
+  document.body.appendChild(toast);
+
+  // Fade out and remove
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    setTimeout(() => toast.remove(), 500);
+  }, 2500);
 }
 
 // Runtime Initialization

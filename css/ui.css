@@ -96,68 +96,104 @@
 }
 
 /* ==========================================================
-   ATMOSPHERIC TESTAMENT COLOR THEMING
-   ========================================================== */
-/* Old Testament (Amber Parchment) */
-.event.testament-ot .card {
+   ATMOSPHERIC TESTAMENT COLOR THEMING (All Devices & Panels)
+   ========================================================= */
+
+/* --- 1. OLD TESTAMENT ERA (Amber Parchment Theme) --- */
+
+/* The Card Item on the Timeline */
+.event.testament-ot .card,
+.event.major.testament-ot .card,
+.event.minor.testament-ot .card {
     background: #fdfaf2 !important;
     border: 1px solid rgba(180, 83, 9, 0.25) !important;
     border-left: 6px solid #b45309 !important;
     box-shadow: 0 4px 12px rgba(180, 83, 9, 0.04) !important;
 }
 
-.event.testament-ot .card h2 {
+/* Card Heading (Title) */
+.event.testament-ot .card h2,
+.event.major.testament-ot .card h2,
+.event.minor.testament-ot .card h2 {
     color: #78350f !important;
 }
 
-.event.testament-ot .card .year {
+/* Card Year Label */
+.event.testament-ot .card .year,
+.event.major.testament-ot .card .year,
+.event.minor.testament-ot .card .year {
     color: #d97706 !important;
 }
 
+/* Card Hover Interactions */
+.event.testament-ot .card:hover,
+.event.major.testament-ot .card:hover,
+.event.minor.testament-ot .card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 14px 28px rgba(180, 83, 9, 0.15) !important;
+}
+
+/* The Expanded Side Detail Panels & Mobile Modals */
 .detail.testament-ot,
-.modal.testament-ot #modalBody {
+.modal.testament-ot #modalBody,
+#modalBody.testament-ot {
     border-top: 6px solid #b45309 !important;
     background-color: #fdfaf2 !important;
 }
 
 .detail.testament-ot h2,
-.modal.testament-ot h2 {
+.modal.testament-ot h2,
+#modalBody.testament-ot h2 {
     color: #78350f !important;
 }
 
-.event.testament-ot .card:hover {
-    box-shadow: 0 14px 28px rgba(180, 83, 9, 0.15) !important;
-}
 
-/* New Testament (Gospel Crimson) */
-.event.testament-nt .card {
+/* --- 2. NEW TESTAMENT ERA (Gospel Crimson Theme) --- */
+
+/* The Card Item on the Timeline */
+.event.testament-nt .card,
+.event.major.testament-nt .card,
+.event.minor.testament-nt .card {
     background: #fef2f2 !important;
     border: 1px solid rgba(220, 38, 38, 0.2) !important;
     border-left: 6px solid #dc2626 !important;
     box-shadow: 0 4px 12px rgba(220, 38, 38, 0.05) !important;
 }
 
-.event.testament-nt .card h2 {
+/* Card Heading (Title) */
+.event.testament-nt .card h2,
+.event.major.testament-nt .card h2,
+.event.minor.testament-nt .card h2 {
     color: #991b1b !important;
 }
 
-.event.testament-nt .card .year {
+/* Card Year Label */
+.event.testament-nt .card .year,
+.event.major.testament-nt .card .year,
+.event.minor.testament-nt .card .year {
     color: #ef4444 !important;
 }
 
+/* Card Hover Interactions */
+.event.testament-nt .card:hover,
+.event.major.testament-nt .card:hover,
+.event.minor.testament-nt .card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 14px 28px rgba(220, 38, 38, 0.15) !important;
+}
+
+/* The Expanded Side Detail Panels & Mobile Modals */
 .detail.testament-nt,
-.modal.testament-nt #modalBody {
+.modal.testament-nt #modalBody,
+#modalBody.testament-nt {
     border-top: 6px solid #dc2626 !important;
     background-color: #fef2f2 !important;
 }
 
 .detail.testament-nt h2,
-.modal.testament-nt h2 {
+.modal.testament-nt h2,
+#modalBody.testament-nt h2 {
     color: #991b1b !important;
-}
-
-.event.testament-nt .card:hover {
-    box-shadow: 0 14px 28px rgba(220, 38, 38, 0.15) !important;
 }
 
 /* ==========================================================
@@ -413,8 +449,26 @@
     background: #ebdcc5;
 }
 
-@media (max-width: 992px) {
-    .detail {
+/* Laptop specific visibility tweaks */
+@media (max-width: 1400px) {
+    #leftDetail {
         display: none !important;
+        /* Hide left detail panel on laptops */
+    }
+
+    /* Make sure the right sidebar can scroll internally if content is long */
+    .right-detail {
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+}
+
+/* Mobile specific visibility tweaks */
+@media (max-width: 992px) {
+
+    #leftDetail,
+    #rightDetail {
+        display: none !important;
+        /* Hide both sidebars on mobile */
     }
 }

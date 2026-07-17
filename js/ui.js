@@ -112,11 +112,53 @@ function toggleJesusConnection(btn) {
 /**
  * Branching layout strategy handler based on width
  */
+// Make sure both active indexes are defined at the top of your state (timeline.js)
+// let activeLeftIndex = null;
+// let activeRightIndex = null;
+
 function handleEventClick(index, side, cardElement) {
-    if (window.innerWidth <= 992) {
+    const width = window.innerWidth;
+
+    if (width <= 992) {
+        // 1. MOBILE VIEW
         openMobileModal(index);
+    } else if (width > 992 && width <= 1400) {
+        // 2. LAPTOP VIEW (Force all details to the right panel as a single sidebar)
+        toggleLaptopDetail(index, cardElement);
     } else {
+        // 3. DESKTOP VIEW (Standard alternating panels)
         toggleDesktopDetail(index, side, cardElement);
+    }
+}
+
+// Laptop logic: Treats the right panel as the single unified sidebar
+function toggleLaptopDetail(index, cardElement) {
+    const leftPanel = document.getElementById("leftDetail");
+    const rightPanel = document.getElementById("rightDetail");
+    const containerEvent = cardElement.closest('.event');
+    const dotElement = containerEvent.querySelector('.dot');
+
+    // Close left panel completely
+    activeLeftIndex = null;
+    leftPanel.classList.remove("show");
+
+    // Highlight active timeline node
+    document.querySelectorAll('.event').forEach(el => el.classList.remove('active'));
+
+    if (activeRightIndex === index) {
+        activeRightIndex = null;
+        rightPanel.className = "detail right-detail";
+    } else {
+        activeRightIndex = index;
+        containerEvent.classList.add('active');
+
+        // Render content into right sidebar
+        rightPanel.className = `detail right-detail show testament-${events[index].testament}`;
+        rightPanel.innerHTML = generateDetailHtml(events[index]);
+
+        // Adjust arrow pointing position to the active dot
+        adjustArrowPosition(dotElement, rightPanel);
+        smoothScrollToEvent(containerEvent);
     }
 }
 
