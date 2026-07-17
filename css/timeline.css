@@ -271,3 +271,102 @@
 .event.right {
     --dir: -1;
 }
+
+/* ==========================================================
+   BASE CARD STYLES
+   ========================================================== */
+.card {
+    padding: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* ==========================================================
+   UPDATED MINOR EVENT CARD (MUTED BLUE)
+   ========================================================== */
+.event.minor .card {
+    border-top: 3px solid #8fa4c3;
+    background: #f7fafc;
+    /* Cool, soft background wash */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    /* Lighter shadow so it feels physically lighter */
+}
+
+.event.minor .card h2 {
+    color: #4a5a73;
+    /* Muted slate text instead of dark blue */
+    font-size: 1.15rem;
+    /* Slightly smaller than major card titles */
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+/* Minor event label tag */
+.minor-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background-color: #f0f4f8;
+    color: #7188a9;
+    /* Soft slate text */
+    border: 1px solid #e2e8f0;
+}
+
+/* Dynamic glow when a minor card is active/selected */
+.event.minor.active .card {
+    box-shadow: 0 0 0 3px rgba(91, 125, 189, 0.15), 0 10px 15px -3px rgba(91, 125, 189, 0.1);
+    border-color: #5B7DBD;
+}
+
+/* ==========================================================
+   ELEVATED MAJOR EVENT CARD (DOMINANT GOLD)
+   ========================================================== */
+.event.major .card {
+    border-top: 5px solid #b08b57;
+    /* Deep, rich gold border */
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(90, 70, 50, 0.08);
+    /* Warmer, heavier shadow to give it physical weight */
+}
+
+.event.major .card h2 {
+    color: #5a4632;
+    /* Deep warm brown for commanding contrast */
+    font-size: 1.3rem;
+    /* Visually larger than minor cards */
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+/* Major event label tag */
+.major-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background-color: #fbf7ee;
+    color: #b08b57;
+    border: 1px solid #f3eae0;
+}
+
+/* Dynamic glow when a major card is active/selected */
+.event.major.active .card {
+    box-shadow: 0 0 0 3px rgba(176, 139, 87, 0.2), 0 10px 20px -5px rgba(90, 70, 50, 0.15);
+}
+
+.year {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #8c765c;
+    margin-bottom: 8px;
+}

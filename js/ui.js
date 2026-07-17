@@ -102,6 +102,10 @@ function generateDetailHtml(e) {
         ` : ''}
 
         ${interestingFactHtml}
+
+        <div class="swipe-hint">
+            <i class="fa-solid fa-angles-left"></i> Swipe to Navigate <i class="fa-solid fa-angles-right"></i>
+        </div>
     `;
 }
 
@@ -244,31 +248,91 @@ function smoothScrollToEvent(eventElement) {
     });
 }
 
+// Keep track of the currently open event index in mobile view
+let activeMobileIndex = null;
+
+// Touch tracking variables
+let touchStartX = 0;
+let touchEndX = 0;
+
 function openMobileModal(index) {
+    activeMobileIndex = index; // Store active index
     const modal = document.getElementById("mobileModal");
     const modalBody = document.getElementById("modalBody");
     const currentEvent = events[index];
 
-    // 1. Populate the target container with structural content layout
     modalBody.innerHTML = generateDetailHtml(currentEvent);
 
-    // 2. Cleanly append visibility and era classes without breaking base styles
-    modal.classList.add("show");
-
-    // Clean up any old testament classes first to prevent layout bleeding
-    modal.classList.remove("testament-ot", "testament-nt");
-    modal.classList.add(`testament-${currentEvent.testament}`);
-
-    // 3. Prevent background underlying view scroll tracking layers
+    modal.className = `modal-overlay show testament-${currentEvent.testament}`;
     document.body.style.overflow = "hidden";
+
+    // Setup touch event listeners for swipe detection
+    modal.addEventListener('touchstart', handleTouchStart, { passive: true });
+    modal.addEventListener('touchend', handleTouchEnd, { passive: true });
 }
 
 function closeMobileModal(event) {
-    // Check if user clicked background container or explicit boundary target close trigger elements
     if (event.target.id === "mobileModal" || event.target.closest('.modal-close')) {
         const modal = document.getElementById("mobileModal");
-
         modal.classList.remove("show");
         document.body.style.overflow = "";
+
+        // Clean up event listeners when closed
+        modal.removeEventListener('touchstart', handleTouchStart);
+        modal.removeEventListener('touchend', handleTouchEnd);
+        activeMobileIndex = null;
     }
+}
+
+// Touch Start Tracker
+function handleTouchStart(e) {
+    touchStartX = e.changedTouches[0].screenX;
+}
+
+// Touch End Tracker & Direction Decider
+function handleTouchEnd(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipeGesture();
+}
+
+function handleSwipeGesture() {
+    const swipeThreshold = 50; // Minimum distance in pixels to count as a swipe
+    const diffX = touchEndX - touchStartX;
+
+    if (activeMobileIndex === null) return;
+
+    // Filter events to match currently selected viewing filter
+    const filteredEvents = events.filter(e => currentFilter === "all" || e.type === currentFilter);
+
+    // Find where the current event sits inside the active filtered array
+    const currentFilteredIdx = filteredEvents.findIndex(ev => ev.title === events[activeMobileIndex].title && ev.year === events[activeMobileIndex].year);
+
+    if (Math.abs(diffX) > swipeThreshold) {
+        if (diffX < 0) {
+            // Swiped Left -> Load NEXT chronological event
+            if (currentFilteredIdx < filteredEvents.length - 1) {
+                const nextEvent = filteredEvents[currentFilteredIdx + 1];
+                const nextActualIndex = events.findIndex(ev => ev.title === nextEvent.title && ev.year === nextEvent.year);
+                animateModalTransition(() => openMobileModal(nextActualIndex), 'slide-left');
+            }
+        } else {
+            // Swiped Right -> Load PREVIOUS chronological event
+            if (currentFilteredIdx > 0) {
+                const prevEvent = filteredEvents[currentFilteredIdx - 1];
+                const prevActualIndex = events.findIndex(ev => ev.title === prevEvent.title && ev.year === prevEvent.year);
+                animateModalTransition(() => openMobileModal(prevActualIndex), 'slide-right');
+            }
+        }
+    }
+}
+
+// Optional: Smooth animation helper to make card changes feel fluid
+function animateModalTransition(updateContentCallback, direction) {
+    const modalBody = document.getElementById("modalBody");
+    modalBody.classList.add('fade-out');
+
+    setTimeout(() => {
+        updateContentCallback();
+        modalBody.classList.remove('fade-out');
+    }, 150); // Matches quick fade-out duration
 }
