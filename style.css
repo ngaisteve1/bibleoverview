@@ -375,6 +375,91 @@ CONNECTOR LINES
   background: #D4AF37;
 }
 
+
+
+
+/* ==========================================================
+   OLD TESTAMENT ERA STYLES (Antique Amber/Warm Sand Theme)
+   ========================================================== */
+/* The Card Item on the Timeline */
+.event.testament-ot .card {
+  background: #fdfaf2 !important;
+  /* Rich warm parchment cream */
+  border: 1px solid rgba(180, 83, 9, 0.25) !important;
+  border-left: 6px solid #b45309 !important;
+  /* Deep antique amber */
+  box-shadow: 0 4px 12px rgba(180, 83, 9, 0.04) !important;
+}
+
+.event.testament-ot .card h2 {
+  color: #78350f !important;
+  /* Deep dark amber text */
+}
+
+.event.testament-ot .card .year {
+  color: #d97706 !important;
+}
+
+/* The Expanded Side Panel / Mobile Modal */
+.detail.testament-ot,
+.modal.testament-ot #modalBody {
+  border-top: 6px solid #b45309 !important;
+  background-color: #fdfaf2 !important;
+}
+
+.detail.testament-ot h2,
+.modal.testament-ot h2 {
+  color: #78350f !important;
+}
+
+/* ==========================================================
+   NEW TESTAMENT ERA STYLES (Gospel Crimson / Slate White Theme)
+   ========================================================== */
+/* The Card Item on the Timeline */
+.event.testament-nt .card {
+  background: #fef2f2 !important;
+  /* Soft rose/white gospel hue */
+  border: 1px solid rgba(220, 38, 38, 0.2) !important;
+  border-left: 6px solid #dc2626 !important;
+  /* Vivid crimson red */
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.05) !important;
+}
+
+.event.testament-nt .card h2 {
+  color: #991b1b !important;
+  /* Deep crimson header text */
+}
+
+.event.testament-nt .card .year {
+  color: #ef4444 !important;
+}
+
+/* The Expanded Side Panel / Mobile Modal */
+.detail.testament-nt,
+.modal.testament-nt #modalBody {
+  border-top: 6px solid #dc2626 !important;
+  background-color: #fef2f2 !important;
+}
+
+.detail.testament-nt h2,
+.modal.testament-nt h2 {
+  color: #991b1b !important;
+}
+
+/* ==========================================================
+   INTERACTION ENHANCEMENTS (HOVER STATES)
+   ========================================================== */
+.event.testament-ot .card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(180, 83, 9, 0.15) !important;
+}
+
+.event.testament-nt .card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(220, 38, 38, 0.15) !important;
+}
+
+
 /* =================
 EVENT CARDS HIERARCHY
 ================= */

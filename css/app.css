@@ -1,0 +1,84 @@
+/* ==========================================================
+   GLOBAL CANVAS BASES
+   ========================================================== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  background: #fdfbf7;
+  color: #3e3225;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+header h1 {
+  font-size: 40px;
+  color: #5a4632;
+  margin-bottom: 8px;
+  font-weight: 800;
+}
+
+header p {
+  font-size: 16px;
+  color: #8c765c;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================
+   FILTER PANELS BUTTONS
+   ========================================================== */
+.filters button {
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: 1px solid #d1b894;
+  background: white;
+  color: #5a4632;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 5px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.filters button:hover {
+  background: #f3eae0;
+  border-color: #b08b57;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================
+   EASTER EGG INTERACTION MECHANICS
+   ========================================================== */
+.easter-egg-btn {
+  background: transparent;
+  border: none;
+  color: #ebdcc5;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 15px;
+  padding: 5px;
+  transition: all 0.3s ease;
+  opacity: 0.4;
+}
+
+.easter-egg-btn:hover {
+  opacity: 1;
+  color: #b08b57;
+  transform: scale(1.2) rotate(15deg);
+}
+
+.easter-egg-btn.unlocked {
+  opacity: 1;
+  color: #D4AF37;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+  animation: pulseGold 2s infinite;
+}
+
+@keyframes pulseGold {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

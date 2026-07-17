@@ -1,0 +1,190 @@
+/* ==========================================================
+   DESKTOP CORE LAYOUT GRID
+   ========================================================== */
+.page {
+    display: grid;
+    grid-template-columns: minmax(340px, 1fr) 640px minmax(340px, 1fr);
+    gap: 40px;
+    max-width: 1600px;
+    margin: 0 auto 100px;
+    padding: 0 20px;
+    align-items: start;
+}
+
+/* ==========================================================
+   TIMELINE SPINE TRACK
+   ========================================================== */
+.timeline {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    bottom: 10px;
+    width: 6px;
+    background: linear-gradient(to bottom, #D8B56A, #B98938, #8A642D);
+    transform: translateX(-50%);
+    z-index: 1;
+    border-radius: 999px;
+}
+
+.event {
+    width: 50%;
+    padding: 15px 30px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.event.left {
+    left: 0;
+    text-align: right;
+}
+
+.event.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* ==========================================================
+   CONNECTOR LINES
+   ========================================================== */
+.event::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.event.minor::before {
+    background: #cbd5e1;
+}
+
+.event.major::before {
+    background: #e2c77d;
+    height: 5px;
+}
+
+.event.left::before {
+    right: 0;
+    width: 30px;
+}
+
+.event.right::before {
+    left: 0;
+    width: 30px;
+}
+
+.event.left.active::before {
+    background: #D4AF37;
+}
+
+.event.right.active::before {
+    background: #D4AF37;
+}
+
+/* ==========================================================
+   TIMELINE DOTS
+   ========================================================== */
+.dot {
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.event.left .dot {
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.event.right .dot {
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.major .dot {
+    width: 22px;
+    height: 22px;
+    background: #D4AF37;
+    border: 4px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.minor .dot {
+    width: 14px;
+    height: 14px;
+    background: #5B7DBD;
+    border: 3px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Active Selection Dot Engine Styles */
+.event.active.major .dot {
+    box-shadow: 0 0 0 8px rgba(212, 175, 55, 0.25);
+    transform: translate(calc(var(--dir, 1) * 50%), -50%) scale(1.2);
+}
+
+.event.active.minor .dot {
+    box-shadow: 0 0 0 6px rgba(91, 125, 189, 0.25);
+    transform: translate(calc(var(--dir, 1) * 50%), -50%) scale(1.25);
+}
+
+.event.left {
+    --dir: 1;
+}
+
+.event.right {
+    --dir: -1;
+}
+
+/* ==========================================================
+   RESPONSIVE LAYOUT ENGINE MEDIA QUERY
+   ========================================================== */
+@media (max-width: 992px) {
+    .page {
+        grid-template-columns: 1fr;
+        gap: 0;
+        max-width: 650px;
+    }
+
+    .timeline::before {
+        left: 20px;
+        transform: none;
+    }
+
+    .event.left,
+    .event.right {
+        width: 100%;
+        left: 0;
+        padding-left: 50px;
+        padding-right: 10px;
+        text-align: left;
+    }
+
+    .event::before {
+        left: 20px !important;
+        right: auto !important;
+        width: 30px !important;
+    }
+
+    .event.left .dot,
+    .event.right .dot {
+        left: 20px !important;
+        right: auto !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .event.active.major .dot,
+    .event.active.minor .dot {
+        transform: translate(-50%, -50%) scale(1.2) !important;
+    }
+}

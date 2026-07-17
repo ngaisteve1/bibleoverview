@@ -19,7 +19,7 @@ function render() {
             (side === "right" && activeRightIndex === actualIndex);
 
         const eventElement = document.createElement("div");
-        eventElement.className = `event ${side} ${e.type} ${isActive ? 'active' : ''}`;
+        eventElement.className = `event ${side} ${e.type} testament-${e.testament} ${isActive ? 'active' : ''}`;
         eventElement.setAttribute("data-index", actualIndex);
 
         eventElement.innerHTML = `
@@ -65,7 +65,8 @@ function generateDetailHtml(e) {
         <h3><i class="fa-solid fa-bullseye"></i> Key Theme</h3>
         <p>${e.keyTheme}</p>
 
-        <!-- Collapsible Connection to Jesus Section -->
+        <!-- Collapsible Connection to Jesus Section (ONLY SHOWS IF CONTENT EXISTS) -->
+        ${e.jesus ? `
         <div class="collapsible-jesus-container">
             <button class="jesus-toggle-btn" onclick="toggleJesusConnection(this)">
                 <span><i class="fa-solid fa-cross jesus-icon"></i> Connection To Jesus</span>
@@ -77,6 +78,7 @@ function generateDetailHtml(e) {
                 </div>
             </div>
         </div>
+        ` : ''}
 
         ${interestingFactHtml}
     `;
@@ -123,30 +125,37 @@ function toggleDesktopDetail(index, side, cardElement) {
     const rightPanel = document.getElementById("rightDetail");
     const containerEvent = cardElement.closest('.event');
     const dotElement = containerEvent.querySelector('.dot');
+    const currentEvent = events[index];
 
     document.querySelectorAll(`.event.${side}`).forEach(el => el.classList.remove('active'));
 
     if (side === "left") {
         if (activeLeftIndex === index) {
             activeLeftIndex = null;
-            leftPanel.classList.remove("show");
+            leftPanel.className = "detail left-detail"; // Reset classes
         } else {
             activeLeftIndex = index;
             containerEvent.classList.add('active');
-            leftPanel.innerHTML = generateDetailHtml(events[index]);
-            leftPanel.classList.add("show");
+
+            // Update data panel content and testament tracking class configurations
+            leftPanel.className = `detail left-detail show testament-${currentEvent.testament}`;
+            leftPanel.innerHTML = generateDetailHtml(currentEvent);
+
             adjustArrowPosition(dotElement, leftPanel);
             smoothScrollToEvent(containerEvent);
         }
     } else {
         if (activeRightIndex === index) {
             activeRightIndex = null;
-            rightPanel.classList.remove("show");
+            rightPanel.className = "detail right-detail"; // Reset classes
         } else {
             activeRightIndex = index;
             containerEvent.classList.add('active');
-            rightPanel.innerHTML = generateDetailHtml(events[index]);
-            rightPanel.classList.add("show");
+
+            // Update data panel content and testament tracking class configurations
+            rightPanel.className = `detail right-detail show testament-${currentEvent.testament}`;
+            rightPanel.innerHTML = generateDetailHtml(currentEvent);
+
             adjustArrowPosition(dotElement, rightPanel);
             smoothScrollToEvent(containerEvent);
         }
@@ -175,9 +184,12 @@ function smoothScrollToEvent(eventElement) {
 function openMobileModal(index) {
     const modal = document.getElementById("mobileModal");
     const modalBody = document.getElementById("modalBody");
+    const currentEvent = events[index];
 
-    modalBody.innerHTML = generateDetailHtml(events[index]);
-    modal.classList.add("show");
+    modalBody.innerHTML = generateDetailHtml(currentEvent);
+
+    // Apply era tracking class configurations to the modal structure
+    modal.className = `modal show testament-${currentEvent.testament}`;
     document.body.style.overflow = "hidden";
 }
 
