@@ -26,7 +26,7 @@ function revealEasterEgg() {
   updatePanel("rightDetail", activeRightIndex);
 
   // 3. Non-blocking Notification
-  showToast("✨ Secrets Unlocked! You've found the timeline Easter egg. Interesting Facts will now appear inside event details!");
+  showToast("✨ Secrets Unlocked! You've found it. Interesting Facts will now appear inside event details!");
 }
 
 /**
@@ -56,7 +56,7 @@ function showToast(message) {
   setTimeout(() => {
     toast.style.opacity = '0';
     setTimeout(() => toast.remove(), 500);
-  }, 2500);
+  }, 5000);
 }
 
 // Runtime Initialization
