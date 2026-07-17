@@ -291,28 +291,28 @@ const events = [
         jesus: "",
         funFact: "The book of Acts begins in Jerusalem and ends with the gospel reaching Rome, showing the expansion of God's mission."
     },
-    // {
-    //   title: "The Apostles' Writings",
-    //   year: "AD 50–95",
-    //   type: "major",
-    //   books: [
-    //     "Romans",
-    //     "1 Corinthians",
-    //     "Hebrews",
-    //     "James",
-    //     "1 Peter",
-    //     "Revelation"
-    //   ],
-    //   passages: [
-    //     "Romans 1:16",
-    //     "1 Corinthians 15:1-4",
-    //     "Revelation 21:1-5"
-    //   ],
-    //   description: "The apostles teach the Church the meaning of Jesus' life, death, and resurrection while guiding believers to live faithfully as they await His return.",
-    //   keyTheme: "God's people live between Christ's first coming and His future return, continuing His mission with hope.",
-    //   jesus: "Jesus is the risen Lord who builds His Church and will return to complete God's kingdom.",
-    //   funFact: "The New Testament letters were written to real churches facing real struggles, making their teachings practical for believers today."
-    // },  
+    {
+        title: "The Apostles' Writings",
+        year: "AD 50–95",
+        type: "minor",
+        books: [
+            "Romans",
+            "1 Corinthians",
+            "Hebrews",
+            "James",
+            "1 Peter",
+            "Revelation"
+        ],
+        passages: [
+            "Romans 1:16",
+            "1 Corinthians 15:1-4",
+            "Revelation 21:1-5"
+        ],
+        description: "The apostles teach the Church the meaning of Jesus' life, death, and resurrection while guiding believers to live faithfully as they await His return.",
+        keyTheme: "God's people live between Christ's first coming and His future return, continuing His mission with hope.",
+        jesus: "",
+        funFact: "The Apostle Paul, author of 13 New Testament books — began as a zealous persecutor of Christians, actively hunting down and arresting believers before his dramatic conversion to faith in Christ."
+    },
     {
         title: "New Creation",
         year: "Future Promise",
