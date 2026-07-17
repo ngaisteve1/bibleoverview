@@ -249,16 +249,25 @@ function openMobileModal(index) {
     const modalBody = document.getElementById("modalBody");
     const currentEvent = events[index];
 
+    // 1. Populate the target container with structural content layout
     modalBody.innerHTML = generateDetailHtml(currentEvent);
 
-    // Apply era tracking class configurations to the modal structure
-    modal.className = `modal show testament-${currentEvent.testament}`;
+    // 2. Cleanly append visibility and era classes without breaking base styles
+    modal.classList.add("show");
+
+    // Clean up any old testament classes first to prevent layout bleeding
+    modal.classList.remove("testament-ot", "testament-nt");
+    modal.classList.add(`testament-${currentEvent.testament}`);
+
+    // 3. Prevent background underlying view scroll tracking layers
     document.body.style.overflow = "hidden";
 }
 
 function closeMobileModal(event) {
+    // Check if user clicked background container or explicit boundary target close trigger elements
     if (event.target.id === "mobileModal" || event.target.closest('.modal-close')) {
         const modal = document.getElementById("mobileModal");
+
         modal.classList.remove("show");
         document.body.style.overflow = "";
     }
