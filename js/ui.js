@@ -3,11 +3,32 @@ const timeline = document.getElementById("timeline");
 /**
  * Iterates through active dataset and mounts nodes to the timeline container
  */
+/**
+ * Iterates through active dataset and mounts nodes to the timeline container
+ */
 function render() {
-    timeline.innerHTML = "";
+    timeline.innerHTML = ""; // Clear existing elements safely
+
+    // 1. Filter the event list based on the active state
     const filteredEvents = events.filter(e => currentFilter === "all" || e.type === currentFilter);
 
+    // 2. Setup a tracker to make sure the divider only injects once
+    let hasInjectedDivider = false;
+
     filteredEvents.forEach((e, displayIndex) => {
+
+        // 3. DIVIDER INJECTION CHECK
+        // If this event belongs to the New Testament and we haven't added the divider yet, inject it!
+        if (e.testament === 'nt' && !hasInjectedDivider) {
+            const divider = document.createElement('div');
+            divider.className = 'timeline-divider';
+            divider.innerHTML = `<span class="timeline-divider-content">New Testament</span>`;
+            timeline.appendChild(divider);
+
+            hasInjectedDivider = true; // Lock it so it doesn't repeat
+        }
+
+        // 4. CONTINUING STANDARD ELEMENT MOUNTING
         const side = displayIndex % 2 === 0 ? "left" : "right";
         const actualIndex = events.findIndex(ev => ev.title === e.title && ev.year === e.year);
 
@@ -23,13 +44,13 @@ function render() {
         eventElement.setAttribute("data-index", actualIndex);
 
         eventElement.innerHTML = `
-      <div class="card" onclick="handleEventClick(${actualIndex}, '${side}', this)">
-        <h2>${titlePrefix}${e.title}</h2>
-        <div class="year">${e.year}</div>
-        <div class="label ${e.type}-label">${labelIcon} ${e.type.toUpperCase()} EVENT</div>
-      </div>
-      <div class="dot" onclick="handleEventClick(${actualIndex}, '${side}', this.parentElement.querySelector('.card'))"></div>
-    `;
+          <div class="card" onclick="handleEventClick(${actualIndex}, '${side}', this)">
+            <h2>${titlePrefix}${e.title}</h2>
+            <div class="year">${e.year}</div>
+            <div class="label ${e.type}-label">${labelIcon} ${e.type.toUpperCase()} EVENT</div>
+          </div>
+          <div class="dot" onclick="handleEventClick(${actualIndex}, '${side}', this.parentElement.querySelector('.card'))"></div>
+        `;
 
         timeline.appendChild(eventElement);
     });

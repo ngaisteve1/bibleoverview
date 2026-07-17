@@ -94,6 +94,50 @@
 }
 
 /* ==========================================================
+   4. TESTAMENT SECTION DIVIDER (OT / NT BREAK)
+   ========================================================== */
+.timeline-divider {
+    width: 100% !important;
+    left: 0 !important;
+    text-align: center;
+    padding: 40px 0;
+    position: relative;
+    z-index: 2;
+    clear: both;
+    box-sizing: border-box;
+}
+
+.timeline-divider-content {
+    display: inline-block;
+    background: #8A642D;
+    /* Deep gold/bronze matching your spine gradient */
+    color: white;
+    padding: 10px 24px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 2px solid #D8B56A;
+}
+
+/* Responsive adjustments to keep the label clear of the spine track line */
+@media (max-width: 1400px) and (min-width: 993px) {
+    .timeline-divider {
+        padding-left: 80px !important;
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .timeline-divider {
+        padding-left: 50px !important;
+        text-align: left !important;
+    }
+}
+
+/* ==========================================================
    TIMELINE SPINE TRACK
    ========================================================== */
 .timeline {

@@ -30,3 +30,28 @@ function filterEvents(type) {
 
     render();
 }
+
+const timelineContainer = document.getElementById('timeline');
+timelineContainer.innerHTML = ''; // Clear existing
+
+let hasInjectedDivider = false;
+
+events.forEach((event, index) => {
+    // 1. Detect transition shift to NT and drop the divider element
+    if (event.testament === 'nt' && !hasInjectedDivider) {
+        const divider = document.createElement('div');
+        divider.className = 'timeline-divider';
+        divider.innerHTML = `<span class="timeline-divider-content">New Testament</span>`;
+        timelineContainer.appendChild(divider);
+
+        hasInjectedDivider = true; // Ensure it only renders once
+    }
+
+    // 2. Render your regular card elements as normal below
+    const eventCard = document.createElement('div');
+    eventCard.className = `event ${event.importance} ${index % 2 === 0 ? 'left' : 'right'}`;
+
+    // ... rest of your card setup logic (innerHTML, dots, event listeners, etc.) ...
+
+    timelineContainer.appendChild(eventCard);
+});
