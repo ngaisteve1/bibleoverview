@@ -136,18 +136,6 @@ const events = [
         funFact: ""
     },
     {
-        title: "The United Kingdom",
-        year: "1050–930 BC",
-        type: "major",
-        testament: "ot",
-        books: ["1 Samuel", "2 Samuel", "1 Kings"],
-        passages: ["1 Samuel 8", "1 Samuel 12"],
-        description: "Israel transitions from a loose confederation of tribes under judges to a centralized monarchy under Saul, David, and Solomon, establishing Jerusalem as the political and spiritual capital.",
-        keyTheme: "God is the true King, but He allows an earthly monarchy to point toward the need for the ultimate, perfect King who will reign forever.",
-        jesus: "Jesus is the True King of kings who establishes an eternal, spiritual kingdom that will never be divided or destroyed.",
-        funFact: "The people demanded a king to be like the surrounding nations, but God warned them that an earthly king would bring both benefits and heavy burdens."
-    },
-    {
         title: "Davidic Covenant",
         year: "1000 BC",
         type: "major",
