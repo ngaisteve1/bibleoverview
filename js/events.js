@@ -36,6 +36,18 @@ const events = [
         funFact: "God established the rainbow covenant with Noah as a sign of His promise never again to destroy the earth with a flood."
     },
     {
+        title: "The Tower of Babel",
+        year: "Approx. 2200 BC",
+        type: "major",
+        testament: "ot",
+        books: ["Genesis"],
+        passages: ["Genesis 11:1-9"],
+        description: "Humanity attempts to build a tower to make a name for themselves, leading God to confuse their languages and disperse them across the earth.",
+        keyTheme: "Humanity's pride and desire for self-glory are thwarted by God, who initiates the dispersion of nations to prepare for His plan to gather them through Abraham.",
+        jesus: "Jesus reverses the division of Babel by gathering people from every tribe, tongue, and nation into one family through the power of the Holy Spirit.",
+        funFact: "Pentecost reversed Babel—where God confused languages to scatter humanity because of pride, the Holy Spirit enabled people of many languages to hear the gospel and be united in Christ."
+    },
+    {
         title: "Abraham Covenant",
         year: "Around 2000 BC",
         type: "major",
@@ -230,6 +242,18 @@ const events = [
         keyTheme: "God disciplines His people but promises restoration through a New Covenant and transformed hearts.",
         jesus: "The New Covenant promises find fulfillment through Jesus, who brings forgiveness and a renewed relationship with God.",
         funFact: ""
+    },
+    {
+        title: "Return from Exile & Second Temple",
+        year: "538–516 BC",
+        type: "major",
+        testament: "ot",
+        books: ["Ezra", "Nehemiah", "Haggai", "Zechariah"],
+        passages: ["Ezra 1:1-4", "Ezra 6:15"],
+        description: "Led by Zerubbabel, Ezra, and Nehemiah, the Jews return to Jerusalem from Babylon to rebuild the Temple and restore the city walls.",
+        keyTheme: "God is faithful to His promise of restoration; even after judgment, He provides a way for His people to return and worship Him.",
+        jesus: "Jesus arrives as the ultimate fulfillment of the Temple, representing the true place where God dwells with His people forever.",
+        funFact: "The Second Temple was built without the Ark of the Covenant, making it one of the greatest mysteries of the Bible since the Ark disappeared before or during the Babylonian exile."
     },
     {
         title: "Birth of Jesus",
