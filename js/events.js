@@ -84,6 +84,17 @@ const events = [
         funFact: "Jacob's name was changed to Israel, and his twelve sons became the ancestors of the twelve tribes of Israel."
     },
     {
+        title: "The Story of Joseph",
+        year: "Genesis 37-50",
+        type: "major",
+        testament: "ot",
+        books: ["Genesis"],
+        passages: ["Genesis 37:28", "Genesis 50:20"],
+        description: "Betrayed by his brothers and sold into Egyptian slavery, Joseph rises to power by God's providence, saving the region from famine and preserving the family line of Abraham.",
+        jesus: "Like Joseph, Jesus was rejected and betrayed by His own people, falsely accused, and ultimately exalted to save the world and extend forgiveness to His betrayers.",
+        funFact: "Joseph is one of the few major Bible figures with no recorded personal sin, making him one of the clearest Old Testament pictures (types) of Christ."
+    },
+    {
         title: "God Forms Israel as His People",
         year: "1446 BC",
         type: "major",
