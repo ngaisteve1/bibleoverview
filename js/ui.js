@@ -62,7 +62,7 @@ function render() {
  * @returns {string} HTML string
  */
 function generateDetailHtml(e) {
-
+    // 1. Rename logic for the scholarly note
     const interestingFactHtml = (easterEggUnlocked && e.funFact)
         ? `
             <h3><i class="fa-solid fa-star"></i> Interesting Fact</h3>
@@ -70,41 +70,44 @@ function generateDetailHtml(e) {
           `
         : '';
 
+    // 2. Wrap everything in a container with the 'type' class (major/minor)
+    // This allows the CSS border-left to color-code the card automatically
     return `
-        <h2>${e.title}</h2>
-        <div class="year">${e.year}</div>
+        <div class="event-detail-card ${e.type}">
+            <h2>${e.title}</h2>
+            <div class="year">${e.year}</div>
 
-        <h3><i class="fa-solid fa-book"></i> Books</h3>
-        <div class="inline-list">${formatInlineList(e.books)}</div>
+            <h3><i class="fa-solid fa-book"></i> Books</h3>
+            <div class="inline-list">${formatInlineList(e.books)}</div>
 
-        <h3><i class="fa-solid fa-location-dot"></i> Key Passages</h3>
-        <div class="inline-list">${formatInlineList(e.passages)}</div>
+            <h3><i class="fa-solid fa-location-dot"></i> Key Passages</h3>
+            <div class="inline-list">${formatInlineList(e.passages)}</div>
 
-        <h3><i class="fa-solid fa-book-open"></i> Event Summary</h3>
-        <p>${e.description}</p>
+            <h3><i class="fa-solid fa-book-open"></i> Event Summary</h3>
+            <p>${e.description}</p>
 
-        <h3><i class="fa-solid fa-bullseye"></i> Key Theme</h3>
-        <p>${e.keyTheme}</p>
+            <h3><i class="fa-solid fa-bullseye"></i> Key Theme</h3>
+            <p>${e.keyTheme}</p>
 
-        <!-- Collapsible Connection to Jesus Section (ONLY SHOWS IF CONTENT EXISTS) -->
-        ${e.jesus ? `
-        <div class="collapsible-jesus-container">
-            <button class="jesus-toggle-btn" onclick="toggleJesusConnection(this)">
-                <span><i class="fa-solid fa-cross jesus-icon"></i> Connection To Jesus</span>
-                <span class="toggle-arrow"><i class="fa-solid fa-chevron-down"></i> Tap to reveal</span>
-            </button>
-            <div class="jesus-content-wrapper">
-                <div class="jesus-content-inner">
-                <p>${e.jesus}</p>
+            ${e.jesus ? `
+            <div class="collapsible-jesus-container">
+                <button class="jesus-toggle-btn" onclick="toggleJesusConnection(this)">
+                    <span><i class="fa-solid fa-cross jesus-icon"></i> Connection To Jesus</span>
+                    <span class="toggle-arrow"><i class="fa-solid fa-chevron-down"></i> Tap to reveal</span>
+                </button>
+                <div class="jesus-content-wrapper">
+                    <div class="jesus-content-inner">
+                        <p>${e.jesus}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        ` : ''}
+            ` : ''}
 
-        ${interestingFactHtml}
+            ${interestingFactHtml}
 
-        <div class="swipe-hint">
-            <i class="fa-solid fa-angles-left"></i> Swipe to Navigate <i class="fa-solid fa-angles-right"></i>
+            <div class="swipe-hint">
+                <i class="fa-solid fa-angles-left"></i> Swipe to Navigate <i class="fa-solid fa-angles-right"></i>
+            </div>
         </div>
     `;
 }

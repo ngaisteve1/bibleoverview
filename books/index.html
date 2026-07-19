@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bible Library Dashboard - Exploring the Structure, Context, and Unity of Scripture</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="testament-section">
+        <h2><i class="fa-solid fa-scroll" style="color: var(--ot-color)"></i> Old Testament</h2>
+        <div class="book-list" id="otList"></div>
+      </div>
+      
+      <div class="divider-line"></div>
+      
+      <div class="testament-section">
+        <h2><i class="fa-solid fa-book-bible" style="color: var(--nt-color)"></i> New Testament</h2>
+        <div class="book-list" id="ntList"></div>
+      </div>
+    </aside>
+
+    <main class="viewport">
+      <div class="viewport-header">
+        <div>
+          <h1 id="activeBookTitle">Genesis</h1>
+          <p id="activeBookSubtitle">Seeing God's Purpose from Creation to New Creation</p>
+        </div>
+      </div>
+
+      <div class="dashboard-grid" id="dashboardGrid">
+        
+        <div class="dashboard-col">
+          <div class="dashboard-card col-half-card" onclick="openDeepDive('overview')">
+            <div class="card-top">
+              <h3><i class="fa-solid fa-compass"></i> Section 1: Overview</h3>
+              <span class="expand-btn"><i class="fa-solid fa-expand"></i></span>
+            </div>
+            <div class="card-body" id="cardOverviewBody">Loading...</div>
+          </div>
+
+          <div class="dashboard-card col-half-card" onclick="openDeepDive('connection')">
+            <div class="card-top">
+              <h3><i class="fa-solid fa-link"></i> Section 3: Jesus Connection</h3>
+              <span class="expand-btn"><i class="fa-solid fa-expand"></i></span>
+            </div>
+            <div class="card-body" id="cardConnectionBody">Loading...</div>
+          </div>
+        </div>
+
+        <div class="dashboard-col">
+          <div class="dashboard-card col-full-card" onclick="handleContextCardClick(event)">
+            <div class="card-top">
+              <h3><i class="fa-solid fa-timeline"></i> Section 2: Context</h3>
+              <div class="context-toggle-box">
+                <button class="context-pill active-pill" id="pillHistory" onclick="switchContextSubTab(event, 'history')">Historical</button>
+                <button class="context-pill" id="pillCulture" onclick="switchContextSubTab(event, 'culture')">Cultural</button>
+              </div>
+              <span class="expand-btn" onclick="openDeepDiveFromContext(event)"><i class="fa-solid fa-expand"></i></span>
+            </div>
+            <div class="card-body">
+              <div id="panelHistory" class="context-view-panel active-panel">Loading...</div>
+              <div id="panelCulture" class="context-view-panel">Loading...</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="deep-dive-panel" id="deepDivePanel">
+        <button class="back-nav" onclick="closeDeepDive()">
+          <i class="fa-solid fa-arrow-left"></i> Back to Dashboard Grid
+        </button>
+        <div class="deep-dive-content">
+          <h2 id="deepDiveTitle">Section</h2>
+          <div class="deep-dive-text" id="deepDiveBody">Loading deep dive parameters...</div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="bottom-console">
+    <div class="console-label">Filter Console</div>
+    
+    <div class="tag-input-container" onclick="document.getElementById('tagInput').focus()">
+      <div id="activeTagsList" style="display: flex; gap: 6px; flex-wrap: wrap;"></div>
+      <input type="text" id="tagInput" class="tag-input-field" placeholder="Add custom query tag (e.g. Mosaic, Epistle)..." autocomplete="off">
+    </div>
+
+    <div class="suggested-tags-box">
+      <span class="console-label" style="min-width: unset; font-size: 0.75rem;">Suggestions:</span>
+      <div class="suggest-tag" onclick="addFilterTag('Prophet')">Prophets</div>
+      <div class="suggest-tag" onclick="addFilterTag('Abrahamic')">Abrahamic Covenant</div>
+      <div class="suggest-tag" onclick="addFilterTag('New')">New Covenant</div>
+      <div class="suggest-tag" onclick="addFilterTag('Gospel')">Gospels</div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

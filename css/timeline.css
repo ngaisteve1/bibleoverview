@@ -282,6 +282,29 @@
     transition: all 0.25s ease;
 }
 
+/* Update the detail card to feature the left-stripe UI */
+.event-detail-card {
+    padding: 20px;
+    background: #ffffff;
+    border-left: 8px solid #ccc;
+    /* Default (Minor) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Major event stripe */
+.event-detail-card.major {
+    border-left-color: #b08b57;
+    /* Matches your rich gold border */
+}
+
+/* Minor event stripe */
+.event-detail-card.minor {
+    border-left-color: #8fa4c3;
+    /* Matches your muted blue border */
+}
+
 /* ==========================================================
    UPDATED MINOR EVENT CARD (MUTED BLUE)
    ========================================================== */
