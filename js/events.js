@@ -91,6 +91,7 @@ const events = [
         books: ["Genesis"],
         passages: ["Genesis 37:28", "Genesis 50:20"],
         description: "Betrayed by his brothers and sold into Egyptian slavery, Joseph rises to power by God's providence, saving the region from famine and preserving the family line of Abraham.",
+        keyTheme: "God's providence and sovereignty work through human sin to accomplish His purposes and bring blessing.",
         jesus: "Like Joseph, Jesus was rejected and betrayed by His own people, falsely accused, and ultimately exalted to save the world and extend forgiveness to His betrayers.",
         funFact: "Joseph is one of the few major Bible figures with no recorded personal sin, making him one of the clearest Old Testament pictures (types) of Christ."
     },
