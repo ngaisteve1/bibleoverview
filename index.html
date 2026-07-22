@@ -55,6 +55,16 @@
   <!-- Data object should load first -->
   <script src="js/events.js"></script>
 
+  <!-- 2. Unpack it into a global 'events' array right here -->
+  <script>
+    const events = eventsData.data.map(row => {
+      return eventsData.keys.reduce((obj, key, i) => {
+        obj[key] = row[i];
+        return obj;
+      }, {});
+    });
+  </script>
+
   <!-- App Logic Layout Blocks -->
   <script src="js/timeline.js"></script>
   <script src="js/ui.js"></script>

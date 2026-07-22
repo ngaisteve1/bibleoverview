@@ -102,13 +102,8 @@
 /* --- 1. OLD TESTAMENT ERA (Amber Parchment Theme) --- */
 
 /* The Card Item on the Timeline */
-.event.testament-ot .card,
-.event.major.testament-ot .card,
-.event.minor.testament-ot .card {
+.event.testament-ot .card {
     background: #fdfaf2 !important;
-    border: 1px solid rgba(180, 83, 9, 0.25) !important;
-    border-left: 6px solid #b45309 !important;
-    box-shadow: 0 4px 12px rgba(180, 83, 9, 0.04) !important;
 }
 
 /* Card Heading (Title) */
